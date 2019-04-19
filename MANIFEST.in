@@ -1,0 +1,6 @@
+include Makefile
+include *.txt
+include *.rst
+recursive-include climexp_numerical_wps *
+global-exclude __pycache__
+global-exclude *.py[co]

@@ -18,16 +18,3 @@ WORKDIR /opt/wps
 
 # Create conda environment
 RUN conda env create -n wps -f environment.yml
-
-# Install WPS
-RUN ["/bin/bash", "-c", "source activate wps && python setup.py develop"]
-
-# Start WPS service on port 5000 on 0.0.0.0
-EXPOSE 5000
-ENTRYPOINT ["/bin/bash", "-c"]
-CMD ["source activate wps && exec climexp_numerical_wps start -b 0.0.0.0 -c /opt/wps/etc/demo.cfg"]
-
-# docker build -t maartenplieger/climexp_numerical_wps .
-# docker run -p 5000:5000 maartenplieger/climexp_numerical_wps
-# http://localhost:5000/wps?request=GetCapabilities&service=WPS
-# http://localhost:5000/wps?request=DescribeProcess&service=WPS&identifier=all&version=1.0.0

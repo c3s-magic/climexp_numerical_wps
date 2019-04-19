@@ -1,6 +1,6 @@
 name: climexp_numerical_wps
 channels:
-#- conda-forge
+- conda-forge
 - defaults
 dependencies:
 - pip
@@ -10,5 +10,8 @@ dependencies:
 - psutil
 # tests
 - pytest
+- netcdf-fortran 
+- gsl
+- fortran-compiler 
 - pip:
   - -e git+https://github.com/geopython/pywps@master#egg=pywps

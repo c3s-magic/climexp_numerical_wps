@@ -51,7 +51,7 @@ COPY . /opt/wps
 # Start WPS service on port 5000 on 0.0.0.0
 EXPOSE 5000
 ENTRYPOINT ["/bin/bash", "-c"]
-CMD ["source activate wps && exec climexp_numerical_wps start -b 0.0.0.0 -c /opt/wps/etc/demo.cfg"]
+CMD ["source activate wps && exec climexp_numerical_wps start --hostname ${HOSTNAME} -b 0.0.0.0 -c /opt/wps/etc/demo.cfg"]
 
 # docker build -t climexp_numerical_wps .
 # docker run -p 5000:5000 climexp_numerical_wps

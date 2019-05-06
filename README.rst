@@ -26,7 +26,6 @@ A Web Processing Service for Climate Data Analysis.
 * Free software: Apache Software License 2.0
 * Documentation: https://climexp-numerical-wps.readthedocs.io. (TBD)
 
-```
 docker build -t climexp_numerical_wps .
 docker run -it -p 5000:5000 -v /home/c3smagic/data:/data climexp_numerical_wps
 

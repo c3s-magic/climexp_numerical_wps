@@ -13,7 +13,5 @@ dependencies:
 - netcdf-fortran 
 - gsl
 - fortran-compiler 
-- blas
-- lapack
 - pip:
   - -e git+https://github.com/geopython/pywps@master#egg=pywps

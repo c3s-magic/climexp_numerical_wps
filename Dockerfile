@@ -38,7 +38,7 @@ RUN ["/bin/bash", "-c", "source activate wps && cd /src/lapack-3.8.0 && cp make.
 
 # Install climate explorer from source, no conda package available
 WORKDIR /src
-RUN git clone https://github.com/maartenplieger/climexp_numerical
+RUN git clone https://github.com/c3s-magic/climexp_numerical
 ENV CPPFLAGS      "-I${MY_CONDA_ENV}/include -I${MY_CONDA_ENV}/include/fgsl ${CPPFLAGS}"
 ENV LDFLAGS       "-L${MY_CONDA_ENV}/lib ${LDFLAGS}"
 ENV FORTRAN_FLAGS ${CPPFLAGS} ${LDFLAGS}

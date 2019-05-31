@@ -87,3 +87,9 @@ testdata.json
 
 # Visual Studio Code
 .vscode
+
+# Conda
+miniconda.sh
+
+# Data dir
+data

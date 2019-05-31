@@ -29,6 +29,9 @@ install:
   - conda install pytest flake8
   # Install WPS
   - python setup.py install
+  - wget https://github.com/c3s-magic/climexp_numerical/archive/master.tar.gz -O climexp_numerical-master.tar.gz
+  - tar -xzvf climexp_numerical-master.tar.gz
+  - cd climexp_numerical-master/python && python setup.py install && cd -
 before_script:
   # Start WPS service on port 5000 on 0.0.0.0
   - climexp_numerical_wps start --daemon --bind-host 0.0.0.0 --port 5000

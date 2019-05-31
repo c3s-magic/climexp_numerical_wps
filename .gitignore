@@ -87,3 +87,16 @@ testdata.json
 
 # Visual Studio Code
 .vscode
+
+# Conda
+miniconda.sh
+
+# Data dir
+data
+Dockerfile.stage2
+climexp_numerical-master.tar.gz
+climexp_numerical-master/
+fgsl-1.2.0/
+fgsl.tar.gz
+lapack-3.8.0.tar.gz
+

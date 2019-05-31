@@ -10,6 +10,6 @@ Processes
 Say Hello
 ---------
 
-.. autoprocess:: climexp_numerical_wps.processes.wps_say_hello.SayHello
+.. autoprocess:: climexp_numerical_wps.processes.correlate_field.CorrelateField
    :docstring:
    :skiplines: 1

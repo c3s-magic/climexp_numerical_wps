@@ -1,6 +1,6 @@
 # vim:set ft=dockerfile:
 FROM continuumio/miniconda3
-MAINTAINER https://github.com/maartenplieger/climexp_numerical_wps
+MAINTAINER https://github.com/c3s-magic/climexp_numerical_wps
 LABEL Description="Climate Explorer WPS service WPS" Vendor="Birdhouse" Version="0.1.0"
 
 # Update Debian system
@@ -24,7 +24,7 @@ ENV gsl_CFLAGS "-I${MY_CONDA_ENV}/include"
 ENV gsl_LIBS   "-L${MY_CONDA_ENV}/lib"
 
 # Climate explorer expects libblas, not libopenblas
-RUN ln -s /opt/conda/envs/wps/lib/libopenblas.so /opt/conda/envs/wps/lib/libblas.so
+RUN ln -fs /opt/conda/envs/wps/lib/libopenblas.so /opt/conda/envs/wps/lib/libblas.so
 
 # Compile fortran gsl
 WORKDIR /src

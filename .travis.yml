@@ -33,10 +33,10 @@ install:
   - export gsl_LIBS="-L${MY_CONDA_ENV}/lib"
   # Install fgsl
   - curl -L "https://doku.lrz.de/download/attachments/28051060/fgsl-1.2.0.tar.gz" > fgsl.tar.gz && tar -xzvf fgsl.tar.gz 
-  - cd fgsl-1.2.0 && ./configure --prefix ${MY_CONDA_ENV}/ && make && make install && cd -
+  - cd fgsl-1.2.0 && ./configure --prefix ${MY_CONDA_ENV}/ && make > /dev/null && make install && cd -
   # Install lapack
   - curl -L "http://www.netlib.org/lapack/lapack-3.8.0.tar.gz" > lapack-3.8.0.tar.gz && tar -xzvf lapack-3.8.0.tar.gz 
-  - cd lapack-3.8.0 && cp make.inc.example make.inc && make lapacklib && cp liblapack.a ${MY_CONDA_ENV}/lib && cd - && rm -rf lapack-3.8.0
+  - cd lapack-3.8.0 && cp make.inc.example make.inc && make lapacklib > /dev/null && cp liblapack.a ${MY_CONDA_ENV}/lib && cd - && rm -rf lapack-3.8.0
   # Install climate explorer WPS
   - python setup.py install
   - wget https://github.com/c3s-magic/climexp_numerical/archive/master.tar.gz -O climexp_numerical-master.tar.gz
@@ -52,6 +52,7 @@ install:
   - cd - 
   - export CLIMATE_EXPLORER_BUILD=`pwd`"/climexp_numerical-master/build/"
   - export CLIMATE_EXPLORER_DATA=`pwd`"/climexp_numerical-master/data"
+  # Note unable to really test a working explorer, because the required data fields are 2Gb in size.
   # Install climate explorers python wrapper
   - cd climexp_numerical-master/python && python setup.py install && cd -
 before_script:

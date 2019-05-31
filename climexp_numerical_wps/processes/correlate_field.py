@@ -94,14 +94,15 @@ class CorrelateField(Process):
         try:
             climexp = climexp_numerical.ClimExp()
             climexpBuild = os.getenv("CLIMATE_EXPLORER_BUILD", "../build")
+            climexpData = os.getenv("CLIMATE_EXPLORER_DATA", "/data")
             climexp.setClimExpHome(climexpBuild)
 
             os.chdir(self.workdir)
 
             self.checkValidInputFile(request.inputs["netcdf_field"][0].data)
             self.checkValidInputFile(request.inputs["netcdf_timeseries"][0].data)
-            inputfile_netcdf_field = os.path.join("/data", request.inputs["netcdf_field"][0].data)
-            inputfile_netcdf_timeseries = os.path.join("/data", request.inputs["netcdf_timeseries"][0].data)
+            inputfile_netcdf_field = os.path.join(climexpData, request.inputs["netcdf_field"][0].data)
+            inputfile_netcdf_timeseries = os.path.join(climexpData, request.inputs["netcdf_timeseries"][0].data)
 
             outputfile = os.path.join(self.workdir, "correlate_field.nc")
 
